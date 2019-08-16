@@ -21,8 +21,7 @@
         "style",
         "test",
         "merge",
-        "release",
-        "initial"
+        "release"
       ]
     ],
     "body-leading-blank": [2, "always"],
