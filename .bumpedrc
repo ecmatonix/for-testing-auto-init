@@ -1,0 +1,24 @@
+files:
+  - "package.json"
+  - "package-lock.json"
+
+plugins:
+  postrelease:
+    "Generating CHANGELOG file":
+      plugin: "bumped-changelog"
+
+    "Formating files":
+      plugin: "bumped-terminal"
+      command: "npm run format"
+
+    "Commiting new version":
+      plugin: "bumped-terminal"
+      command: "git add -A && git commit -m 'release: v$newVersion'"
+
+    "Creating tag":
+      plugin: "bumped-terminal"
+      command: "git tag -a v$newVersion -m $newVersion"
+
+    "Publishing release":
+      plugin: "bumped-terminal"
+      command: "git push origin master && git push origin v$newVersion"

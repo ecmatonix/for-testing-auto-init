@@ -1,0 +1,44 @@
+{
+  "name": "for-testing-auto-init",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Short description.",
+  "scripts": {
+    "format": "prettier --write \"**/*.{js,json,yml,md}\"",
+    "format:check": "prettier --check \"**/*.{js,json,yml,md}\"",
+    "bumped": "bumped",
+    "recommended-bump": "conventional-recommended-bump --preset angular --verbose",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run format:check",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS -g \".commitlintrc.json\""
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ecmatonix/for-testing-auto-init.git"
+  },
+  "keywords": [
+    "auto-init"
+  ],
+  "author": {
+    "name": "Anton Lykov",
+    "email": "ecmatonix@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ecmatonix/for-testing-auto-init/issues"
+  },
+  "homepage": "https://github.com/ecmatonix/for-testing-auto-init#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^8.1.0",
+    "bumped": "^0.12.0",
+    "bumped-changelog": "^0.3.12",
+    "bumped-terminal": "^0.7.8",
+    "conventional-recommended-bump": "^6.0.0",
+    "husky": "^3.0.3",
+    "prettier": "^1.18.2"
+  }
+}
